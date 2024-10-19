@@ -1,0 +1,110 @@
+/* Profile.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.profile-page {
+    background-color: #000; /* Set the entire page background to black */
+    height: 100vh;
+    padding: 100px;
+    padding-bottom: 0px;
+}
+
+.profile-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    padding: 20px;
+    background-color: #1a1a1a; /* Darker background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Slightly lighter shadow */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff; /* White text */
+}
+
+.profile-form {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-form input,
+.profile-form select {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333; /* Darker border */
+    background-color: #2a2a2a; /* Dark input background */
+    color: #ffffff; /* White text */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-form input::placeholder,
+.profile-form select {
+    color: #bbb; /* Light grey for placeholders */
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none;
+}
+
+.profile-form button {
+    padding: 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff; /* Blue button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px; /* Space for dropdown arrow */
+    background: url('data:image/svg+xml;utf8,<svg fill="white" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z"/></svg>') no-repeat right 12px center;
+    background-color: #2a2a2a; /* Dark select background */
+    border: 1px solid #333; /* Darker border */
+}
+
+select:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+.profile-submit-button {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .profile-page-container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .profile-form input,
+    .profile-form select,
+    .profile-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
