@@ -1,0 +1,22 @@
+/* ReviewComponent.css */
+.review-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .category-name {
+    flex: 1;
+    /* font-weight: bold; */
+  }
+  
+  .stars {
+    flex: 1;
+    text-align: right;
+  }
