@@ -1,0 +1,232 @@
+.app-container {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensures the container covers the entire viewport height */
+    overflow-y: auto; /* Allows scrolling if the content exceeds the viewport height */
+  }
+  
+  .rides-list {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff; /* White heading */
+    font-size: 2.5rem;
+    font-weight: 700; /* Slightly bolder for emphasis */
+  }
+  
+  /* Ride Grid */
+  .rides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Ride Card */
+  .ride-card {
+    background-color: #2c2c2c; /* Darker card background for contrast */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .ride-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+  }
+  
+  .ride-card h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 1.8rem; /* Increased font size for title */
+    font-weight: 600; /* Semi-bold */
+  }
+  
+  .ride-card p {
+    color: #b3b3b3; /* Muted text for readability */
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Select Button */
+  .select-button {
+    background-color: #007bff; /* Primary blue color */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform effect */
+    cursor: pointer;
+  }
+  .select-ride-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Round corners */
+    cursor: pointer; /* Add a pointer on hover */
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  .select-ride-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  .select-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  .select-button:disabled {
+    background-color: #555; /* Grey when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Dialog Styles */
+  .dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .dialog-content {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dialog-content h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Car Layout Styles */
+  .car-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .front-seats,
+  .back-seats {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensure full width for seat arrangement */
+    margin: 10px 0;
+  }
+  
+  .seat {
+    background-color: #444; /* Neutral seat color */
+    color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /* Seat Button */
+  .seat-button {
+    background-color: #444; /* Neutral seat color */
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+  }
+  
+  .seat-button:hover {
+    background-color: #007bff; /* Primary color on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  .seat-button.selected {
+    background-color: #28a745; /* Green for selected */
+  }
+  
+  .seat-selected-message {
+    margin-top: 10px;
+    color: #b3b3b3;
+    font-size: 1rem;
+  }
+  
+  /* Confirm Button */
+  .confirm-button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .confirm-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .rides-grid {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+  
+    .ride-card {
+      padding: 20px;
+    }
+  
+    .dialog-content {
+      padding: 20px;
+      max-width: 90%;
+    }
+    .seat.disabled {
+      background-color: #555; 
+      cursor: not-allowed;
+      color: #999;
+    }
+    .car-layout {
+      flex-direction: column;
+    }
+  
+    .front-seats,
+    .back-seats {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .seat {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+  }
